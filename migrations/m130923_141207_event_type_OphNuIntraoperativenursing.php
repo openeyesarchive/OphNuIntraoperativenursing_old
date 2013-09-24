@@ -34,24 +34,24 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 		$this->createTable('et_ophnuintraoperativenursin_items', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
 				'event_id' => 'int(10) unsigned NOT NULL',
-				'needles1' => 'int(10) unsigned NOT NULL', // Needles 1
-				'needles2' => 'int(10) unsigned NOT NULL', // Needles 2
-				'needles3' => 'int(10) unsigned NOT NULL', // Needles 3
-				'blades1' => 'int(10) unsigned NOT NULL', // Blades 1
-				'blades2' => 'int(10) unsigned NOT NULL', // Blades 2
-				'blades3' => 'int(10) unsigned NOT NULL', // Blades 3
-				'plugs1' => 'int(10) unsigned NOT NULL', // Plugs 1
-				'plugs2' => 'int(10) unsigned NOT NULL', // Plugs 2
-				'plugs3' => 'int(10) unsigned NOT NULL', // Plugs 3
-				'trocars1' => 'int(10) unsigned NOT NULL', // Trocars 1
-				'trocars2' => 'int(10) unsigned NOT NULL', // Trocars 2
-				'trocars3' => 'int(10) unsigned NOT NULL', // Trocars 3
-				'sponges_gauze1' => 'int(10) unsigned NOT NULL', // Sponges Gauze 1
-				'sponges_gauze2' => 'int(10) unsigned NOT NULL', // Sponges Gauze 2
-				'sponges_gauze3' => 'int(10) unsigned NOT NULL', // Sponges Gauze 3
-				'pledgetts1' => 'int(10) unsigned NOT NULL', // Pledgetts 1
-				'pledgetts2' => 'int(10) unsigned NOT NULL', // Pledgetts 2
-				'pledgetts3' => 'int(10) unsigned NOT NULL', // Pledgetts 3
+				'needles1' => 'int(10) unsigned NULL', // Needles 1
+				'needles2' => 'int(10) unsigned NULL', // Needles 2
+				'needles3' => 'int(10) unsigned NULL', // Needles 3
+				'blades1' => 'int(10) unsigned NULL', // Blades 1
+				'blades2' => 'int(10) unsigned NULL', // Blades 2
+				'blades3' => 'int(10) unsigned NULL', // Blades 3
+				'plugs1' => 'int(10) unsigned NULL', // Plugs 1
+				'plugs2' => 'int(10) unsigned NULL', // Plugs 2
+				'plugs3' => 'int(10) unsigned NULL', // Plugs 3
+				'trocars1' => 'int(10) unsigned NULL', // Trocars 1
+				'trocars2' => 'int(10) unsigned NULL', // Trocars 2
+				'trocars3' => 'int(10) unsigned NULL', // Trocars 3
+				'sponges_gauze1' => 'int(10) unsigned NULL', // Sponges Gauze 1
+				'sponges_gauze2' => 'int(10) unsigned NULL', // Sponges Gauze 2
+				'sponges_gauze3' => 'int(10) unsigned NULL', // Sponges Gauze 3
+				'pledgetts1' => 'int(10) unsigned NULL', // Pledgetts 1
+				'pledgetts2' => 'int(10) unsigned NULL', // Pledgetts 2
+				'pledgetts3' => 'int(10) unsigned NULL', // Pledgetts 3
 				'discrepancies' => 'tinyint(1) unsigned NOT NULL DEFAULT 0', // Discrepancies
 				'xray_required' => 'tinyint(1) unsigned NOT NULL DEFAULT 0', // XRay required
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
@@ -83,9 +83,9 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 				'CONSTRAINT `ophnuintraoperativenursin_details_viscoelastic_used_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
 			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
 
-		$this->insert('ophnuintraoperativenursin_details_viscoelastic_used',array('name'=>'One','display_order'=>1));
-		$this->insert('ophnuintraoperativenursin_details_viscoelastic_used',array('name'=>'Two','display_order'=>2));
-		$this->insert('ophnuintraoperativenursin_details_viscoelastic_used',array('name'=>'Three','display_order'=>3));
+		$this->insert('ophnuintraoperativenursin_details_viscoelastic_used',array('name'=>'Healon','display_order'=>1));
+		$this->insert('ophnuintraoperativenursin_details_viscoelastic_used',array('name'=>'Healon GV','display_order'=>2));
+		$this->insert('ophnuintraoperativenursin_details_viscoelastic_used',array('name'=>'HPMC','display_order'=>3));
 
 		// element lookup table ophnuintraoperativenursin_details_nonop_eye_protected
 		$this->createTable('ophnuintraoperativenursin_details_nonop_eye_protected', array(

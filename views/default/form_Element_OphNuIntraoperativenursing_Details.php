@@ -25,8 +25,8 @@
 	data-element-display-order="<?php echo $element->elementType->display_order?>">
 	<h4 class="elementTypeName"><?php echo $element->elementType->name; ?></h4>
 
-	<?php echo $form->dropDownList($element, 'viscoelastic_used_id', CHtml::listData(OphNuIntraoperativenursing_Details_ViscoelasticUsed::model()->findAll(array('order'=> 'display_order asc')),'id','name'),array('empty'=>'- Please select -'))?>
-	<?php echo $form->dropDownList($element, 'nonop_eye_protected_id', CHtml::listData(OphNuIntraoperativenursing_Details_NonopEyeProtected::model()->findAll(array('order'=> 'display_order asc')),'id','name'),array('empty'=>'- Please select -'))?>
+	<?php echo $form->radioButtons($element, 'viscoelastic_used_id', 'ophnuintraoperativenursin_details_viscoelastic_used')?>
+	<?php echo $form->radioButtons($element, 'nonop_eye_protected_id', 'ophnuintraoperativenursin_details_nonop_eye_protected')?>
 	<?php echo $form->textArea($element, 'grounding_pad', array('rows' => 6, 'cols' => 80))?>
 	<?php echo $form->radioButtons($element, 'nasal_or_throat_pack_id', 'ophnuintraoperativenursin_details_nasal_or_throat_pack')?>
 	<?php echo $form->textField($element, 'inserted_time', array('size' => '6'))?>

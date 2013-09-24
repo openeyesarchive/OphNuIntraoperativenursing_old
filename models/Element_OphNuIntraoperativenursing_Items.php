@@ -83,7 +83,7 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		// will receive user inputs.
 		return array(
 			array('event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, ', 'safe'),
-			array('needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, ', 'required'),
+			array('discrepancies, xray_required', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, ', 'safe', 'on' => 'search'),
@@ -176,22 +176,62 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		));
 	}
 
-
-
-	protected function beforeSave()
+	public function getStage()
 	{
+		$element = Element_OphNuIntraoperativenursing_Items::model()->findByPk($this->id);
+
+		if (!$element->id) {
+			return 'first';
+		}
+
+		$return = 'final';
+
+		foreach (array('needles2','blades2','plugs2','trocars2','sponges_gauze2','pledgetts2') as $field) {
+			if ($element->$field == null) {
+				$return = 'second';
+			}
+		}
+
+		return $return;
+	}
+
+	public function beforeSave()
+	{
+		foreach (array('needles','blades','plugs','trocars','sponges_gauze','pledgetts') as $field) {
+			for ($i=1;$i<=3;$i++) {
+				$_field = $field.$i;
+				if ($this->$_field == '') {
+					$this->$_field = null;
+				}
+			}
+		}
+
 		return parent::beforeSave();
 	}
 
-	protected function afterSave()
+	protected function afterValidate()
 	{
+		switch ($stage = $this->getStage()) {
+			case 'first': $n=1; break;
+			case 'second': $n=2; break;
+			case 'final': $n=3; break;
+		}
 
-		return parent::afterSave();
-	}
+		$ok = true;
 
-	protected function beforeValidate()
-	{
-		return parent::beforeValidate();
+		foreach (array('needles','blades','plugs','trocars','sponges_gauze','pledgetts') as $field) {
+			$field .= $n;
+
+			if (!$this->$field || !ctype_digit($this->$field)) {
+				$ok = false;
+			}
+		}
+
+		if (!$ok) {
+			$this->addError($stage,'Please enter all of the '.$stage.' count values as numbers');
+		}
+
+		return parent::afterValidate();
 	}
 }
 ?>

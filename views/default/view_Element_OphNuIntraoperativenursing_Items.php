@@ -20,80 +20,53 @@
 
 <h4 class="elementTypeName"><?php echo $element->elementType->name?></h4>
 
+	<table class="eventDetail preoperativeChecklist" style="margin-left: 10px;">
+		<tr>
+			<th>COUNTABLE ITEMS</th>
+			<th>First count</th>
+			<th>Second count / sign out</th>
+			<th>Final count</th>
+		</tr>
+		<tr>
+			<th>Needles</th>
+			<td><?php echo $element->needles1?></td>
+			<td><?php echo $element->needles2?></td>
+			<td><?php echo $element->needles3?></td>
+		</tr>
+		<tr>
+			<th>Blades</th>
+			<td><?php echo $element->blades1?></td>
+			<td><?php echo $element->blades2?></td>
+			<td><?php echo $element->blades3?></td>
+		</tr>
+		<tr>
+			<th>Plugs</th>
+			<td><?php echo $element->plugs1?></td>
+			<td><?php echo $element->plugs2?></td>
+			<td><?php echo $element->plugs3?></td>
+		</tr>
+		<tr>
+			<th>Trocars</th>
+			<td><?php echo $element->trocars1?></td>
+			<td><?php echo $element->trocars2?></td>
+			<td><?php echo $element->trocars3?></td>
+		</tr>
+		<tr>
+			<th>Sponges/Gauze</th>
+			<td><?php echo $element->sponges_gauze1?></td>
+			<td><?php echo $element->sponges_gauze2?></td>
+			<td><?php echo $element->sponges_gauze3?></td>
+		</tr>
+		<tr>
+			<th>Pledgetts</th>
+			<td><?php echo $element->pledgetts1?></td>
+			<td><?php echo $element->pledgetts2?></td>
+			<td><?php echo $element->pledgetts3?></td>
+		</tr>
+	</table>
+
 <table class="subtleWhite normalText">
 	<tbody>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('needles1'))?></td>
-			<td><span class="big"><?php echo $element->needles1?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('needles2'))?></td>
-			<td><span class="big"><?php echo $element->needles2?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('needles3'))?></td>
-			<td><span class="big"><?php echo $element->needles3?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('blades1'))?></td>
-			<td><span class="big"><?php echo $element->blades1?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('blades2'))?></td>
-			<td><span class="big"><?php echo $element->blades2?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('blades3'))?></td>
-			<td><span class="big"><?php echo $element->blades3?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('plugs1'))?></td>
-			<td><span class="big"><?php echo $element->plugs1?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('plugs2'))?></td>
-			<td><span class="big"><?php echo $element->plugs2?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('plugs3'))?></td>
-			<td><span class="big"><?php echo $element->plugs3?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('trocars1'))?></td>
-			<td><span class="big"><?php echo $element->trocars1?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('trocars2'))?></td>
-			<td><span class="big"><?php echo $element->trocars2?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('trocars3'))?></td>
-			<td><span class="big"><?php echo $element->trocars3?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('sponges_gauze1'))?></td>
-			<td><span class="big"><?php echo $element->sponges_gauze1?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('sponges_gauze2'))?></td>
-			<td><span class="big"><?php echo $element->sponges_gauze2?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('sponges_gauze3'))?></td>
-			<td><span class="big"><?php echo $element->sponges_gauze3?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('pledgetts1'))?></td>
-			<td><span class="big"><?php echo $element->pledgetts1?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('pledgetts2'))?></td>
-			<td><span class="big"><?php echo $element->pledgetts2?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('pledgetts3'))?></td>
-			<td><span class="big"><?php echo $element->pledgetts3?></span></td>
-		</tr>
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('discrepancies'))?>:</td>
 			<td><span class="big"><?php echo $element->discrepancies ? 'Yes' : 'No'?></span></td>
