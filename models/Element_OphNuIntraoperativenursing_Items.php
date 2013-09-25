@@ -178,9 +178,7 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 
 	public function getStage()
 	{
-		$element = Element_OphNuIntraoperativenursing_Items::model()->findByPk($this->id);
-
-		if (!$element->id) {
+		if (!$element = Element_OphNuIntraoperativenursing_Items::model()->findByPk($this->id)) {
 			return 'first';
 		}
 
