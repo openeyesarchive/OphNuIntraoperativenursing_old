@@ -82,8 +82,8 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, ', 'safe'),
-			array('discrepancies, xray_required', 'required'),
+			array('event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id', 'safe'),
+			array('discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, ', 'safe', 'on' => 'search'),
@@ -103,6 +103,9 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 			'event' => array(self::BELONGS_TO, 'Event', 'event_id'),
 			'user' => array(self::BELONGS_TO, 'User', 'created_user_id'),
 			'usermodified' => array(self::BELONGS_TO, 'User', 'last_modified_user_id'),
+			'scrub_nurse' => array(self::BELONGS_TO, 'User', 'scrub_nurse_id'),
+			'circulating_nurse' => array(self::BELONGS_TO, 'User', 'circulating_nurse_id'),
+			'anaesthetic_nurse' => array(self::BELONGS_TO, 'User', 'anaesthetic_nurse_id'),
 		);
 	}
 
@@ -134,6 +137,15 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 			'pledgetts3' => 'Pledgetts 3',
 			'discrepancies' => 'Discrepancies',
 			'xray_required' => 'XRay required',
+			'entered_or' => 'Entered OR',
+			'time_out' => 'Time out',
+			'surgery_start' => 'Surgery start',
+			'surgery_stop' => 'Surgery stop',
+			'sign_out' => 'Sign out',
+			'left_or' => 'Left OR',
+			'scrub_nurse_id' => 'Nurse',
+			'circulating_nurse_id' => 'Circulating nurse',
+			'anaesthetic_nurse_id' => 'Anaesthetic / Extra support nurse',
 		);
 	}
 
@@ -230,6 +242,18 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		}
 
 		return parent::afterValidate();
+	}
+
+	protected function afterFind()
+	{
+		$this->entered_or = substr($this->entered_or,0,5);
+		$this->time_out = substr($this->time_out,0,5);
+		$this->surgery_start = substr($this->surgery_start,0,5);
+		$this->surgery_stop = substr($this->entered_or,0,5);
+		$this->entered_or = substr($this->entered_or,0,5);
+		$this->entered_or = substr($this->entered_or,0,5);
+		$this->sign_out = substr($this->sign_out,0,5);
+		$this->left_or = substr($this->left_or,0,5);
 	}
 }
 ?>
