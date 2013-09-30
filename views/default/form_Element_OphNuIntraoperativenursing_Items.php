@@ -81,4 +81,5 @@
 	<?php echo $form->dropDownList($element, 'scrub_nurse_id', CHtml::listData(User::model()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
 	<?php echo $form->dropDownList($element, 'circulating_nurse_id', CHtml::listData(User::model()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
 	<?php echo $form->dropDownList($element, 'anaesthetic_nurse_id', CHtml::listData(User::model()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
+	<?php echo $form->textField($element, 'eye_protected')?>
 </div>

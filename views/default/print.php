@@ -20,6 +20,17 @@
 
 <style type="text/css">
 	td { font-size: 18px; }
+
+	table.preoperativeChecklist { margin-left: 0.5em; margin-bottom: 10px; margin-left: 0; }
+	table.preoperativeChecklist th { border: 1px solid #999; padding: 10px; text-align: left; margin-left: 15px; width: 145px; }
+	table.preoperativeChecklist td { border: 1px solid #999; padding: 10px; font-size: 15px; width: 160px; }
+	table.preoperativeChecklist span.right { float: right; }
+	table.preoperativeChecklist .header { background: #ccc; text-align: center; font-weight: bold; }
+	table.preoperativeChecklist .eventDetail { padding: 0 !important; }
+	table.preoperativeChecklist td.header { cursor: pointer; }
+	table.preoperativeChecklist tbody { display: block; }
+
+	input[readonly] { color: #888; }
 </style>
 
 <div>

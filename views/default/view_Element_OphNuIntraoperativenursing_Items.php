@@ -111,5 +111,9 @@
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('anaesthetic_nurse_id'))?>:</td>
 			<td><span class="big"><?php echo $element->anaesthetic_nurse->fullName?></span></td>
 		</tr>
+		<tr>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('eye_protected'))?>:</td>
+			<td><span class="big"><?php echo $element->eye_protected?></span></td>
+		</tr>
 	</tbody>
 </table>
