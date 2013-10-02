@@ -87,6 +87,7 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, ', 'safe', 'on' => 'search'),
+			array('entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or', 'date', 'format' => 'hh:mm'),
 		);
 	}
 

@@ -76,8 +76,8 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, event_id, viscoelastic_used_id, nonop_eye_protected_id, grounding_pad, nasal_or_throat_pack_id, inserted_time, removal_time, ', 'safe', 'on' => 'search'),
-			array('inserted_time', 'date', 'format' => 'HH:mm'),
-			array('removal_time', 'date', 'format' => 'HH:mm'),
+			array('inserted_time', 'date', 'format' => 'hh:mm'),
+			array('removal_time', 'date', 'format' => 'hh:mm'),
 		);
 	}
 
