@@ -44,6 +44,142 @@ $(document).ready(function() {
 		e.preventDefault();
 		printIFrameUrl(OE_print_url, null);
 	});
+
+	$('#entered_or_now').click(function(e) {
+		e.preventDefault();
+
+		var d = new Date;
+
+		var h = d.getHours();
+		if (h.length <2) {
+			h = "0"+h;
+		}
+		var m = d.getMinutes();
+		if (m.length <2) {
+			m = "0"+m;
+		}
+
+		$('#Element_OphNuIntraoperativenursing_Items_entered_or').val(h+":"+m);
+	});
+
+	$('#time_out_now').click(function(e) {
+		e.preventDefault();
+
+		var d = new Date;
+
+		var h = d.getHours();
+		if (h.length <2) {
+			h = "0"+h;
+		}
+		var m = d.getMinutes();
+		if (m.length <2) {
+			m = "0"+m;
+		}
+		
+		$('#Element_OphNuIntraoperativenursing_Items_time_out').val(h+":"+m);
+	});
+
+	$('#surgery_start_now').click(function(e) {
+		e.preventDefault();
+
+		var d = new Date;
+
+		var h = d.getHours();
+		if (h.length <2) {
+			h = "0"+h;
+		}
+		var m = d.getMinutes();
+		if (m.length <2) {
+			m = "0"+m;
+		}
+		
+		$('#Element_OphNuIntraoperativenursing_Items_surgery_start').val(h+":"+m);
+	});
+
+	$('#surgery_stop_now').click(function(e) {
+		e.preventDefault();
+
+		var d = new Date;
+
+		var h = d.getHours();
+		if (h.length <2) {
+			h = "0"+h;
+		}
+		var m = d.getMinutes();
+		if (m.length <2) {
+			m = "0"+m;
+		}
+		
+		$('#Element_OphNuIntraoperativenursing_Items_surgery_stop').val(h+":"+m);
+	});
+
+	$('#sign_out_now').click(function(e) {
+		e.preventDefault();
+
+		var d = new Date;
+
+		var h = d.getHours();
+		if (h.length <2) {
+			h = "0"+h;
+		}
+		var m = d.getMinutes();
+		if (m.length <2) {
+			m = "0"+m;
+		}
+		
+		$('#Element_OphNuIntraoperativenursing_Items_sign_out').val(h+":"+m);
+	});
+
+	$('#left_or_now').click(function(e) {
+		e.preventDefault();
+
+		var d = new Date;
+
+		var h = d.getHours();
+		if (h.length <2) {
+			h = "0"+h;
+		}
+		var m = d.getMinutes();
+		if (m.length <2) {
+			m = "0"+m;
+		}
+		
+		$('#Element_OphNuIntraoperativenursing_Items_left_or').val(h+":"+m);
+	});
+
+	$('#inserted_now').click(function(e) {
+		e.preventDefault();
+
+		var d = new Date;
+
+		var h = d.getHours();
+		if (h.length <2) {
+			h = "0"+h;
+		}
+		var m = d.getMinutes();
+		if (m.length <2) {
+			m = "0"+m;
+		}
+	 
+		$('#Element_OphNuIntraoperativenursing_Details_inserted_time').val(h+":"+m);
+	});
+
+	$('#removal_now').click(function(e) {
+		e.preventDefault();
+
+		var d = new Date;
+
+		var h = d.getHours();
+		if (h.length <2) {
+			h = "0"+h;
+		}
+		var m = d.getMinutes();
+		if (m.length <2) {
+			m = "0"+m;
+		}
+	 
+		$('#Element_OphNuIntraoperativenursing_Details_removal_time').val(h+":"+m);
+	});
 });
 
 function ucfirst(str) { str += ''; var f = str.charAt(0).toUpperCase(); return f + str.substr(1); }
