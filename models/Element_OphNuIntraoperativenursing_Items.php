@@ -234,7 +234,7 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		foreach (array('needles','blades','plugs','trocars','sponges_gauze','pledgetts') as $field) {
 			$field .= $n;
 
-			if (!$this->$field || !ctype_digit($this->$field)) {
+			if (strlen($this->$field) <1 || !ctype_digit($this->$field)) {
 				$ok = false;
 			}
 		}
