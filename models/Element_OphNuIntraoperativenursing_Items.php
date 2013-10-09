@@ -234,13 +234,13 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		foreach (array('needles','blades','plugs','trocars','sponges_gauze','pledgetts') as $field) {
 			$field .= $n;
 
-			if (!$this->$field || !ctype_digit($this->$field)) {
+			if (!$this->$field) {
 				$ok = false;
 			}
 		}
 
 		if (!$ok) {
-			$this->addError($stage,'Please enter all of the '.$stage.' count values as numbers');
+			$this->addError($stage,'Please enter all of the '.$stage.' count values');
 		}
 
 		return parent::afterValidate();
