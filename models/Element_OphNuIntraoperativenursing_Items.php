@@ -83,7 +83,7 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		// will receive user inputs.
 		return array(
 			array('event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id, wound_classification', 'safe'),
-			array('discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id, wound_classification', 'required'),
+			array('discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, ', 'safe', 'on' => 'search'),

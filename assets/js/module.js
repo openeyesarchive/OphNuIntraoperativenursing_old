@@ -188,6 +188,16 @@ $(document).ready(function() {
 			$('#Element_OphNuIntraoperativenursing_Details_location_id').hide();
 		}
 	});
+
+	$('input[name="Element_OphNuIntraoperativenursing_Details[nasal_or_throat_pack_id]"]').click(function(e) {
+		if ($('#Element_OphNuIntraoperativenursing_Details_nasal_or_throat_pack_id_1').is(':checked') || $('#Element_OphNuIntraoperativenursing_Details_nasal_or_throat_pack_id_2').is(':checked')) {
+			$('#div_Element_OphNuIntraoperativenursing_Details_inserted_time').show();
+			$('#div_Element_OphNuIntraoperativenursing_Details_removal_time').show();
+		} else {
+			$('#div_Element_OphNuIntraoperativenursing_Details_inserted_time').hide();
+			$('#div_Element_OphNuIntraoperativenursing_Details_removal_time').hide();
+		}
+	});
 });
 
 function ucfirst(str) { str += ''; var f = str.charAt(0).toUpperCase(); return f + str.substr(1); }

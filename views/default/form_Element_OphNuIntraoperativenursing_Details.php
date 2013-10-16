@@ -30,8 +30,8 @@
 	<?php echo $form->radioBoolean($element, 'grounding_pad')?>
 	<?php echo $form->radioButtons($element, 'location_id', 'ophnuintraoperativenursin_grounding_pad_location', null, false, $this->locationHidden($element))?>
 	<?php echo $form->radioButtons($element, 'nasal_or_throat_pack_id', 'ophnuintraoperativenursin_details_nasal_or_throat_pack')?>
-	<?php echo $form->textField($element, 'inserted_time', array('size' => '6'),array('links'=>array('title'=>'now','href'=>'#','id'=>'inserted_now')))?>
-	<?php echo $form->textField($element, 'removal_time', array('size' => '6'),array('links'=>array('title'=>'now','href'=>'#','id'=>'removal_now')))?>
+	<?php echo $form->textField($element, 'inserted_time', array('size' => '6', 'hide' => $this->timeFieldsHidden($element)),array('links'=>array('title'=>'now','href'=>'#','id'=>'inserted_now')))?>
+	<?php echo $form->textField($element, 'removal_time', array('size' => '6', 'hide' => $this->timeFieldsHidden($element)),array('links'=>array('title'=>'now','href'=>'#','id'=>'removal_now')))?>
 	<?php echo $form->multiSelectList($element, 'Prep', 'prepItems', 'prep_id', CHtml::listData(OphNuIntraoperativenursing_Prep::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Prep','empty'=>'- Select -','textField'=>'prep_comments','width'=>'13.5em'))?>
 	<?php echo $form->multiSelectList($element, 'Dressing', 'dressingItems', 'dressing_id', CHtml::listData(OphNuIntraoperativenursing_Dressing::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Dressing','empty'=>'- Select -','textField'=>'dressing_comments','width'=>'13.5em'))?>
 	<?php echo $form->multiSelectList($element, 'Additional', 'additionalItems', 'additional_id', CHtml::listData(OphNuIntraoperativenursing_Additional::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Additional','empty'=>'- Select -','textField'=>'additional_comments','width'=>'13.5em'))?>

@@ -38,14 +38,16 @@
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('nasal_or_throat_pack_id'))?></td>
 			<td><span class="big"><?php echo $element->nasal_or_throat_pack ? $element->nasal_or_throat_pack->name : 'None'?></span></td>
 		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('inserted_time'))?></td>
-			<td><span class="big"><?php echo CHtml::encode($element->inserted_time)?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('removal_time'))?></td>
-			<td><span class="big"><?php echo CHtml::encode($element->removal_time)?></span></td>
-		</tr>
+		<?php if ($element->nasal_or_throat_pack && in_array($element->nasal_or_throat_pack->name,array('Nasal','Throat'))) {?>
+			<tr>
+				<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('inserted_time'))?></td>
+				<td><span class="big"><?php echo CHtml::encode($element->inserted_time)?></span></td>
+			</tr>
+			<tr>
+				<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('removal_time'))?></td>
+				<td><span class="big"><?php echo CHtml::encode($element->removal_time)?></span></td>
+			</tr>
+		<?php }?>
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('count_discrepancy'))?></td>
 			<td><span class="big"><?php echo $element->count_discrepancy ? 'Yes' : 'No'?></span></td>

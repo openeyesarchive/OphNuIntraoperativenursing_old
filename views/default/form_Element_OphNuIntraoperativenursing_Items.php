@@ -25,7 +25,7 @@
 	data-element-display-order="<?php echo $element->elementType->display_order?>">
 	<h4 class="elementTypeName"><?php echo $element->elementType->name; ?></h4>
 
-	<?php echo $form->textArea($element, 'wound_classification', array('rows'=>5,'cols'=>60))?>
+	<?php echo $form->textField($element, 'wound_classification', array('size'=>'50em'))?>
 
 	<table class="eventDetail preoperativeChecklist">
 		<tr>

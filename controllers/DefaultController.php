@@ -22,11 +22,21 @@ class DefaultController extends BaseEventTypeController
 		parent::actionPrint($id);
 	}
 
-	public function locationHidden($element) {
+	public function locationHidden($element)
+	{
 		if (!empty($_POST)) {
 			return !@$_POST['Element_OphNuIntraoperativenursing_Details']['grounding_pad'];
 		}
 
 		return !$element->grounding_pad;
+	}
+
+	public function timeFieldsHidden($element)
+	{
+		if (!empty($_POST)) {
+			return (@$_POST['Element_OphNuIntraoperativenursing_Details']['nasal_or_throat_pack_id'] <1 || @$_POST['Element_OphNuIntraoperativenursing_Details']['nasal_or_throat_pack_id'] >2);
+		}
+
+		return ($element->nasal_or_throat_pack_id <1 || $element->nasal_or_throat_pack_id >2);
 	}
 }

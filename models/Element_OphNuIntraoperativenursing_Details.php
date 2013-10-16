@@ -72,7 +72,7 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 		// will receive user inputs.
 		return array(
 			array('event_id, viscoelastic_used_id, nonop_eye_protected_id, grounding_pad, nasal_or_throat_pack_id, inserted_time, removal_time, location_id, prep_comments, dressing_comments, additional_comments, implant_comments', 'safe'),
-			array('viscoelastic_used_id, nonop_eye_protected_id, grounding_pad, nasal_or_throat_pack_id, inserted_time, removal_time, ', 'required'),
+			array('nonop_eye_protected_id, grounding_pad, nasal_or_throat_pack_id', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, event_id, viscoelastic_used_id, nonop_eye_protected_id, grounding_pad, nasal_or_throat_pack_id, inserted_time, removal_time, ', 'safe', 'on' => 'search'),
