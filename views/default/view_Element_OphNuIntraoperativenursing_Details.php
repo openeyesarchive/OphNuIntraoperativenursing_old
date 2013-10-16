@@ -23,8 +23,15 @@
 <table class="subtleWhite normalText">
 	<tbody>
 		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('viscoelastic_used_id'))?></td>
-			<td><span class="big"><?php echo $element->viscoelastic_used ? $element->viscoelastic_used->name : 'N/A'?></span></td>
+			<td width="30%">Viscoelastic used:</td>
+			<td><span class="big">
+				<?php if ($element->viscoelasticItems) {
+					foreach ($element->viscoelasticItems as $i => $item) {
+						if ($i >0) echo ", ";
+						echo $item->viscoelastic->name;
+					}
+				}?>
+			</td>
 		</tr>
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('nonop_eye_protected_id'))?></td>

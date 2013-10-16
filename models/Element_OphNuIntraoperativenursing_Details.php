@@ -102,6 +102,7 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 			'dressingItems' => array(self::HAS_MANY, 'OphNuIntraoperativenursing_Dressing_Assignment', 'element_id'),
 			'additionalItems' => array(self::HAS_MANY, 'OphNuIntraoperativenursing_Additional_Assignment', 'element_id'),
 			'implantItems' => array(self::HAS_MANY, 'OphNuIntraoperativenursing_Implant_Assignment', 'element_id'),
+			'viscoelasticItems' => array(self::HAS_MANY, 'OphNuIntraoperativenursing_Viscoelastic_Assignment', 'element_id'),
 		);
 	}
 
@@ -178,6 +179,7 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 		$this->saveRelatedItems('Dressing');
 		$this->saveRelatedItems('Additional');
 		$this->saveRelatedItems('Implant');
+		$this->saveRelatedItems('Viscoelastic');
 
 		return parent::afterSave();
 	}

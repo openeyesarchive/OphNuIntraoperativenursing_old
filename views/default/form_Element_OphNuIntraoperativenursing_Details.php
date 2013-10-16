@@ -25,7 +25,7 @@
 	data-element-display-order="<?php echo $element->elementType->display_order?>">
 	<h4 class="elementTypeName"><?php echo $element->elementType->name; ?></h4>
 
-	<?php echo $form->dropDownList($element, 'viscoelastic_used_id', CHtml::listData(OphNuIntraoperativenursing_Details_ViscoelasticUsed::model()->findAll(array('order'=>'display_order')),'id','name'),array('empty'=>'N/A'))?>
+	<?php echo $form->multiSelectList($element, 'Viscoelastic', 'viscoelasticItems', 'viscoelastic_id', CHtml::listData(OphNuIntraoperativenursing_Details_ViscoelasticUsed::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label' => 'Viscoelastic used','empty' => '- Select -'))?>
 	<?php echo $form->radioButtons($element, 'nonop_eye_protected_id', 'ophnuintraoperativenursin_details_nonop_eye_protected')?>
 	<?php echo $form->radioBoolean($element, 'grounding_pad')?>
 	<?php echo $form->radioButtons($element, 'location_id', 'ophnuintraoperativenursin_grounding_pad_location', null, false, $this->locationHidden($element))?>
