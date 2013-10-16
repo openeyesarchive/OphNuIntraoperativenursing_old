@@ -25,6 +25,8 @@
 	data-element-display-order="<?php echo $element->elementType->display_order?>">
 	<h4 class="elementTypeName"><?php echo $element->elementType->name; ?></h4>
 
+	<?php echo $form->textArea($element, 'wound_classification', array('rows'=>5,'cols'=>60))?>
+
 	<table class="eventDetail preoperativeChecklist">
 		<tr>
 			<th>COUNTABLE ITEMS</th>
@@ -75,8 +77,8 @@
 	<?php echo $form->textField($element, 'entered_or', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'entered_or_now')))?>
 	<?php echo $form->textField($element, 'time_out', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'time_out_now')))?>
 	<?php echo $form->textField($element, 'surgery_start', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'surgery_start_now')))?>
-	<?php echo $form->textField($element, 'surgery_stop', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'surgery_stop_now')))?>
 	<?php echo $form->textField($element, 'sign_out', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'sign_out_now')))?>
+	<?php echo $form->textField($element, 'surgery_stop', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'surgery_stop_now')))?>
 	<?php echo $form->textField($element, 'left_or', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'left_or_now')))?>
 	<?php echo $form->dropDownList($element, 'scrub_nurse_id', CHtml::listData(User::model()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
 	<?php echo $form->dropDownList($element, 'circulating_nurse_id', CHtml::listData(User::model()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>

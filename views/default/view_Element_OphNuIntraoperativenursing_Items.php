@@ -20,6 +20,15 @@
 
 <h4 class="elementTypeName"><?php echo $element->elementType->name?></h4>
 
+<table class="subtleWhite normalText">
+	<tbody>
+		<tr>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('wound_classification'))?>:</td>
+			<td><span class="big"><?php echo CHtml::encode($element->wound_classification)?></span></td>
+		</tr>
+	</tbody>
+</table>
+
 <table class="eventDetail preoperativeChecklist" style="margin-left: 10px;">
 	<tr>
 		<th>COUNTABLE ITEMS</th>
@@ -88,12 +97,12 @@
 			<td><span class="big"><?php echo $element->surgery_start?></span></td>
 		</tr>
 		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('surgery_stop'))?>:</td>
-			<td><span class="big"><?php echo $element->surgery_stop?></span></td>
-		</tr>
-		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('sign_out'))?>:</td>
 			<td><span class="big"><?php echo $element->sign_out?></span></td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('surgery_stop'))?>:</td>
+			<td><span class="big"><?php echo $element->surgery_stop?></span></td>
 		</tr>
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('left_or'))?>:</td>
@@ -110,10 +119,6 @@
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('anaesthetic_nurse_id'))?>:</td>
 			<td><span class="big"><?php echo $element->anaesthetic_nurse->fullName?></span></td>
-		</tr>
-		<tr>
-			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('eye_protected'))?>:</td>
-			<td><span class="big"><?php echo $element->eye_protected?></span></td>
 		</tr>
 	</tbody>
 </table>

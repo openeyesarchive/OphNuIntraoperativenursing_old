@@ -82,8 +82,8 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id, eye_protected', 'safe'),
-			array('discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id, eye_protected', 'required'),
+			array('event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id, wound_classification', 'safe'),
+			array('discrepancies, xray_required, entered_or, time_out, surgery_start, surgery_stop, sign_out, left_or, scrub_nurse_id, circulating_nurse_id, anaesthetic_nurse_id, wound_classification', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, event_id, needles1, needles2, needles3, blades1, blades2, blades3, plugs1, plugs2, plugs3, trocars1, trocars2, trocars3, sponges_gauze1, sponges_gauze2, sponges_gauze3, pledgetts1, pledgetts2, pledgetts3, discrepancies, xray_required, ', 'safe', 'on' => 'search'),
@@ -256,6 +256,17 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		$this->entered_or = substr($this->entered_or,0,5);
 		$this->sign_out = substr($this->sign_out,0,5);
 		$this->left_or = substr($this->left_or,0,5);
+	}
+
+	protected function beforeValidate()
+	{
+		foreach (array('entered_or','time_out','surgery_start','surgery_stop','sign_out','left_or') as $field) {
+			if (preg_match('/^[0-9]:[0-9]{2}$/',$this->$field)) {
+				$this->$field = '0'.$this->$field;
+			}
+		}
+
+		return parent::beforeValidate();
 	}
 }
 ?>

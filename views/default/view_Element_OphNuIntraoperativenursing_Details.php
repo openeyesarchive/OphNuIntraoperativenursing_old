@@ -24,7 +24,7 @@
 	<tbody>
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('viscoelastic_used_id'))?></td>
-			<td><span class="big"><?php echo $element->viscoelastic_used ? $element->viscoelastic_used->name : 'None'?></span></td>
+			<td><span class="big"><?php echo $element->viscoelastic_used ? $element->viscoelastic_used->name : 'N/A'?></span></td>
 		</tr>
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('nonop_eye_protected_id'))?></td>
@@ -61,6 +61,62 @@
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('path_form_completed'))?></td>
 			<td><span class="big"><?php echo $element->path_form_completed ? 'Yes' : 'No'?></span></td>
+		</tr>
+		<tr>
+			<td width="30%">Prep:</td>
+			<td><span class="big">
+				<?php if ($element->prepItems) {
+					foreach ($element->prepItems as $i => $item) {
+						if ($i >0) echo ", ";
+						echo $item->prep->name;
+					}
+				}?><?php if ($element->prep_comments) {
+					if ($element->prepItems) echo ", ";
+					echo $element->prep_comments;
+				}?>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">Dressing:</td>
+			<td><span class="big">
+				<?php if ($element->dressingItems) {
+					foreach ($element->dressingItems as $i => $item) {
+						if ($i >0) echo ", ";
+						echo $item->dressing->name;
+					}
+				}?><?php if ($element->dressing_comments) {
+					if ($element->dressingItems) echo ", ";
+					echo $element->dressing_comments;
+				}?>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">Additional:</td>
+			<td><span class="big">
+				<?php if ($element->additionalItems) {
+					foreach ($element->additionalItems as $i => $item) {
+						if ($i >0) echo ", ";
+						echo $item->additional->name;
+					}
+				}?><?php if ($element->additional_comments) {
+					if ($element->additionalItems) echo ", ";
+					echo $element->additional_comments;
+				}?>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">Implant/prosthesis/scleral buckle:</td>
+			<td><span class="big">
+				<?php if ($element->implantItems) {
+					foreach ($element->implantItems as $i => $item) {
+						if ($i >0) echo ", ";
+						echo $item->implant->name;
+					}
+				}?><?php if ($element->implant_comments) {
+					if ($element->implantItems) echo ", ";
+					echo $element->implant_comments;
+				}?>
+			</td>
 		</tr>
 	</tbody>
 </table>
