@@ -32,7 +32,7 @@
 		</tr>
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('grounding_pad'))?></td>
-			<td><span class="big"><?php echo CHtml::encode($element->grounding_pad)?></span></td>
+			<td><span class="big"><?php echo $element->grounding_pad ? 'Yes, '.$element->groundingPad->name : 'No'?></span></td>
 		</tr>
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('nasal_or_throat_pack_id'))?></td>
@@ -45,6 +45,22 @@
 		<tr>
 			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('removal_time'))?></td>
 			<td><span class="big"><?php echo CHtml::encode($element->removal_time)?></span></td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('count_discrepancy'))?></td>
+			<td><span class="big"><?php echo $element->count_discrepancy ? 'Yes' : 'No'?></span></td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('xray_required'))?></td>
+			<td><span class="big"><?php echo $element->xray_required ? 'Yes' : 'No'?></span></td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('specimins_collected'))?></td>
+			<td><span class="big"><?php echo $element->specimins_collected ? 'Yes' : 'No'?></span></td>
+		</tr>
+		<tr>
+			<td width="30%"><?php echo CHtml::encode($element->getAttributeLabel('path_form_completed'))?></td>
+			<td><span class="big"><?php echo $element->path_form_completed ? 'Yes' : 'No'?></span></td>
 		</tr>
 	</tbody>
 </table>

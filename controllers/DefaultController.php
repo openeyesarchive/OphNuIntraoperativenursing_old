@@ -21,4 +21,12 @@ class DefaultController extends BaseEventTypeController
 	{
 		parent::actionPrint($id);
 	}
+
+	public function locationHidden($element) {
+		if (!empty($_POST)) {
+			return !@$_POST['Element_OphNuIntraoperativenursing_Details']['grounding_pad'];
+		}
+
+		return !$element->grounding_pad;
+	}
 }

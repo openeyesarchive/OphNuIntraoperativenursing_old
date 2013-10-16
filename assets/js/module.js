@@ -50,11 +50,11 @@ $(document).ready(function() {
 
 		var d = new Date;
 
-		var h = d.getHours();
+		var h = String(d.getHours());
 		if (h.length <2) {
 			h = "0"+h;
 		}
-		var m = d.getMinutes();
+		var m = String(d.getMinutes());
 		if (m.length <2) {
 			m = "0"+m;
 		}
@@ -67,11 +67,11 @@ $(document).ready(function() {
 
 		var d = new Date;
 
-		var h = d.getHours();
+		var h = String(d.getHours());
 		if (h.length <2) {
 			h = "0"+h;
 		}
-		var m = d.getMinutes();
+		var m = String(d.getMinutes());
 		if (m.length <2) {
 			m = "0"+m;
 		}
@@ -84,11 +84,11 @@ $(document).ready(function() {
 
 		var d = new Date;
 
-		var h = d.getHours();
+		var h = String(d.getHours());
 		if (h.length <2) {
 			h = "0"+h;
 		}
-		var m = d.getMinutes();
+		var m = String(d.getMinutes());
 		if (m.length <2) {
 			m = "0"+m;
 		}
@@ -101,11 +101,11 @@ $(document).ready(function() {
 
 		var d = new Date;
 
-		var h = d.getHours();
+		var h = String(d.getHours());
 		if (h.length <2) {
 			h = "0"+h;
 		}
-		var m = d.getMinutes();
+		var m = String(d.getMinutes());
 		if (m.length <2) {
 			m = "0"+m;
 		}
@@ -118,11 +118,11 @@ $(document).ready(function() {
 
 		var d = new Date;
 
-		var h = d.getHours();
+		var h = String(d.getHours());
 		if (h.length <2) {
 			h = "0"+h;
 		}
-		var m = d.getMinutes();
+		var m = String(d.getMinutes());
 		if (m.length <2) {
 			m = "0"+m;
 		}
@@ -135,11 +135,11 @@ $(document).ready(function() {
 
 		var d = new Date;
 
-		var h = d.getHours();
+		var h = String(d.getHours());
 		if (h.length <2) {
 			h = "0"+h;
 		}
-		var m = d.getMinutes();
+		var m = String(d.getMinutes());
 		if (m.length <2) {
 			m = "0"+m;
 		}
@@ -152,11 +152,11 @@ $(document).ready(function() {
 
 		var d = new Date;
 
-		var h = d.getHours();
+		var h = String(d.getHours());
 		if (h.length <2) {
 			h = "0"+h;
 		}
-		var m = d.getMinutes();
+		var m = String(d.getMinutes());
 		if (m.length <2) {
 			m = "0"+m;
 		}
@@ -169,16 +169,24 @@ $(document).ready(function() {
 
 		var d = new Date;
 
-		var h = d.getHours();
+		var h = String(d.getHours());
 		if (h.length <2) {
 			h = "0"+h;
 		}
-		var m = d.getMinutes();
+		var m = String(d.getMinutes());
 		if (m.length <2) {
 			m = "0"+m;
 		}
 	 
 		$('#Element_OphNuIntraoperativenursing_Details_removal_time').val(h+":"+m);
+	});
+
+	$('input[name="Element_OphNuIntraoperativenursing_Details[grounding_pad]"]').click(function(e) {
+		if ($('#Element_OphNuIntraoperativenursing_Details_grounding_pad_1').is(':checked')) {
+			$('#Element_OphNuIntraoperativenursing_Details_location_id').show();
+		} else {
+			$('#Element_OphNuIntraoperativenursing_Details_location_id').hide();
+		}
 	});
 });
 

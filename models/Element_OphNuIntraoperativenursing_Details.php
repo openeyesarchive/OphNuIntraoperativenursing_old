@@ -71,7 +71,7 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('event_id, viscoelastic_used_id, nonop_eye_protected_id, grounding_pad, nasal_or_throat_pack_id, inserted_time, removal_time, ', 'safe'),
+			array('event_id, viscoelastic_used_id, nonop_eye_protected_id, grounding_pad, nasal_or_throat_pack_id, inserted_time, removal_time, location_id', 'safe'),
 			array('viscoelastic_used_id, nonop_eye_protected_id, grounding_pad, nasal_or_throat_pack_id, inserted_time, removal_time, ', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -97,6 +97,7 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 			'viscoelastic_used' => array(self::BELONGS_TO, 'OphNuIntraoperativenursing_Details_ViscoelasticUsed', 'viscoelastic_used_id'),
 			'nonop_eye_protected' => array(self::BELONGS_TO, 'OphNuIntraoperativenursing_Details_NonopEyeProtected', 'nonop_eye_protected_id'),
 			'nasal_or_throat_pack' => array(self::BELONGS_TO, 'OphNuIntraoperativenursing_Details_NasalOrThroatPack', 'nasal_or_throat_pack_id'),
+			'groundingPad' => array(self::BELONGS_TO, 'OphNuIntraoperativenursing_Grounding_Pad_Location', 'location_id'),
 		);
 	}
 
@@ -114,6 +115,7 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 			'nasal_or_throat_pack_id' => 'Nasal or throat pack',
 			'inserted_time' => 'Inserted time',
 			'removal_time' => 'Removal time',
+			'location_id' => 'Grounding pad location',
 		);
 	}
 
@@ -140,6 +142,26 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria' => $criteria,
 		));
+	}
+
+	protected function beforeValidate()
+	{
+		if ($this->grounding_pad) {
+			if (!$this->location_id) {
+				$this->addError('location_id','Grounding pad location cannot be blank');
+			}
+		}
+
+		return parent::beforeValidate();
+	}
+
+	protected function beforeSave()
+	{
+		if (!$this->grounding_pad) {
+			$this->location_id = null;
+		}
+
+		return parent::beforeSave();
 	}
 }
 ?>

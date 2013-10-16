@@ -221,7 +221,7 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		return parent::beforeSave();
 	}
 
-	protected function afterValidate()
+	/*protected function afterValidate()
 	{
 		switch ($stage = $this->getStage()) {
 			case 'first': $n=1; break;
@@ -244,7 +244,7 @@ class Element_OphNuIntraoperativenursing_Items extends BaseEventTypeElement
 		}
 
 		return parent::afterValidate();
-	}
+	}*/
 
 	protected function afterFind()
 	{

@@ -27,7 +27,8 @@
 
 	<?php echo $form->radioButtons($element, 'viscoelastic_used_id', 'ophnuintraoperativenursin_details_viscoelastic_used')?>
 	<?php echo $form->radioButtons($element, 'nonop_eye_protected_id', 'ophnuintraoperativenursin_details_nonop_eye_protected')?>
-	<?php echo $form->textArea($element, 'grounding_pad', array('rows' => 6, 'cols' => 80))?>
+	<?php echo $form->radioBoolean($element, 'grounding_pad')?>
+	<?php echo $form->radioButtons($element, 'location_id', 'ophnuintraoperativenursin_grounding_pad_location', null, false, $this->locationHidden($element))?>
 	<?php echo $form->radioButtons($element, 'nasal_or_throat_pack_id', 'ophnuintraoperativenursin_details_nasal_or_throat_pack')?>
 	<?php echo $form->textField($element, 'inserted_time', array('size' => '6'),array('links'=>array('title'=>'now','href'=>'#','id'=>'inserted_now')))?>
 	<?php echo $form->textField($element, 'removal_time', array('size' => '6'),array('links'=>array('title'=>'now','href'=>'#','id'=>'removal_now')))?>

@@ -34,39 +34,39 @@
 		</tr>
 		<tr>
 			<th>Needles</th>
-			<td><?php echo $form->textField($element, 'needles1', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'first'))?></td>
-			<td><?php echo $form->textField($element, 'needles2', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'second'))?></td>
-			<td><?php echo $form->textField($element, 'needles3', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'final'))?></td>
+			<td><?php echo $form->textField($element, 'needles1', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'needles2', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'needles3', array('size'=>10,'nowrapper'=>true))?></td>
 		</tr>
 		<tr>
 			<th>Blades</th>
-			<td><?php echo $form->textField($element, 'blades1', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'first'))?></td>
-			<td><?php echo $form->textField($element, 'blades2', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'second'))?></td>
-			<td><?php echo $form->textField($element, 'blades3', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'final'))?></td>
+			<td><?php echo $form->textField($element, 'blades1', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'blades2', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'blades3', array('size'=>10,'nowrapper'=>true))?></td>
 		</tr>
 		<tr>
 			<th>Plugs</th>
-			<td><?php echo $form->textField($element, 'plugs1', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'first'))?></td>
-			<td><?php echo $form->textField($element, 'plugs2', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'second'))?></td>
-			<td><?php echo $form->textField($element, 'plugs3', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'final'))?></td>
+			<td><?php echo $form->textField($element, 'plugs1', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'plugs2', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'plugs3', array('size'=>10,'nowrapper'=>true))?></td>
 		</tr>
 		<tr>
 			<th>Trocars</th>
-			<td><?php echo $form->textField($element, 'trocars1', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'first'))?></td>
-			<td><?php echo $form->textField($element, 'trocars2', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'second'))?></td>
-			<td><?php echo $form->textField($element, 'trocars3', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'final'))?></td>
+			<td><?php echo $form->textField($element, 'trocars1', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'trocars2', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'trocars3', array('size'=>10,'nowrapper'=>true))?></td>
 		</tr>
 		<tr>
 			<th>Sponges/Gauze</th>
-			<td><?php echo $form->textField($element, 'sponges_gauze1', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'first'))?></td>
-			<td><?php echo $form->textField($element, 'sponges_gauze2', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'second'))?></td>
-			<td><?php echo $form->textField($element, 'sponges_gauze3', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'final'))?></td>
+			<td><?php echo $form->textField($element, 'sponges_gauze1', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'sponges_gauze2', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'sponges_gauze3', array('size'=>10,'nowrapper'=>true))?></td>
 		</tr>
 		<tr>
 			<th>Pledgetts</th>
-			<td><?php echo $form->textField($element, 'pledgetts1', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'first'))?></td>
-			<td><?php echo $form->textField($element, 'pledgetts2', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'second'))?></td>
-			<td><?php echo $form->textField($element, 'pledgetts3', array('size'=>10,'nowrapper'=>true,'readonly'=>$element->getStage() != 'final'))?></td>
+			<td><?php echo $form->textField($element, 'pledgetts1', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'pledgetts2', array('size'=>10,'nowrapper'=>true))?></td>
+			<td><?php echo $form->textField($element, 'pledgetts3', array('size'=>10,'nowrapper'=>true))?></td>
 		</tr>
 	</table>
 
