@@ -553,36 +553,21 @@ CREATE TABLE `ophnuintraoperativenursin_viscoelastic_assignment_version` (
 	public function down()
 	{
 		$this->dropColumn('ophnuintraoperativenursin_additional','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_additional_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_additional_assignment','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_additional_assignment_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_details_nasal_or_throat_pack','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_details_nasal_or_throat_pack_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_details_nonop_eye_protected','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_details_nonop_eye_protected_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_details_viscoelastic_used','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_details_viscoelastic_used_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_dressing','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_dressing_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_dressing_assignment','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_dressing_assignment_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_grounding_pad_location','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_grounding_pad_location_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_implant','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_implant_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_implant_assignment','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_implant_assignment_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_prep','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_prep_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_prep_assignment','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_prep_assignment_version','deleted');
 		$this->dropColumn('ophnuintraoperativenursin_viscoelastic_assignment','deleted');
-		$this->dropColumn('ophnuintraoperativenursin_viscoelastic_assignment_version','deleted');
 
 		$this->dropColumn('et_ophnuintraoperativenursin_details','deleted');
-		$this->dropColumn('et_ophnuintraoperativenursin_details_version','deleted');
 		$this->dropColumn('et_ophnuintraoperativenursin_items','deleted');
-		$this->dropColumn('et_ophnuintraoperativenursin_items_version','deleted');
 
 		$this->dropTable('et_ophnuintraoperativenursin_details_version');
 		$this->dropTable('et_ophnuintraoperativenursin_items_version');
