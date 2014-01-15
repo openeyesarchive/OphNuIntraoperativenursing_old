@@ -27,7 +27,7 @@ class m130930_125205_new_fields extends CDbMigration
 		$this->addForeignKey('et_ophnuintraoperativenursin_items_circulating_nurse_id_fk','et_ophnuintraoperativenursin_items','circulating_nurse_id','user','id');
 		$this->addForeignKey('et_ophnuintraoperativenursin_items_anaesthetic_nurse_id_fk','et_ophnuintraoperativenursin_items','anaesthetic_nurse_id','user','id');
 
-		$this->addColumn('et_ophnuintraoperativenursin_items','eye_protected','varchar(64) collate utf8_bin not null');
+		$this->addColumn('et_ophnuintraoperativenursin_items','eye_protected','varchar(64) NOT NULL');
 	}
 
 	public function down()

@@ -8,11 +8,11 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 
 		$this->alterColumn('et_ophnuintraoperativenursin_details','viscoelastic_used_id','int(10) unsigned null');
 
-		$this->addColumn('et_ophnuintraoperativenursin_items','wound_classification','text collate utf8_bin not null');
+		$this->addColumn('et_ophnuintraoperativenursin_items','wound_classification','text NOT NULL');
 
 		$this->createTable('ophnuintraoperativenursin_prep', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
-				'name' => 'varchar(32) collate utf8_bin not null',
+				'name' => 'varchar(32) NOT NULL',
 				'display_order' => 'int(10) unsigned not null',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
@@ -23,7 +23,7 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 				'KEY `ophnuintraoperativenursin_prep_cui_fk` (`created_user_id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_prep_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_prep_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->insert('ophnuintraoperativenursin_prep',array('id'=>1,'name'=>'Betadine 5%','display_order'=>1));
 		$this->insert('ophnuintraoperativenursin_prep',array('id'=>2,'name'=>'Betadine 10%','display_order'=>2));
@@ -46,11 +46,11 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 				'CONSTRAINT `ophnuintraoperativenursin_prep_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_prep_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_prep_assignment_pre_fk` FOREIGN KEY (`prep_id`) REFERENCES `ophnuintraoperativenursin_prep` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->createTable('ophnuintraoperativenursin_dressing', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
-				'name' => 'varchar(32) collate utf8_bin not null',
+				'name' => 'varchar(32) NOT NULL',
 				'display_order' => 'int(10) unsigned not null',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
@@ -61,7 +61,7 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 				'KEY `ophnuintraoperativenursin_dressing_cui_fk` (`created_user_id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_dressing_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_dressing_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->insert('ophnuintraoperativenursin_dressing',array('id'=>1,'name'=>'Eye pad','display_order'=>1));
 		$this->insert('ophnuintraoperativenursin_dressing',array('id'=>2,'name'=>'Eye shield','display_order'=>2));
@@ -87,11 +87,11 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 				'CONSTRAINT `ophnuintraoperativenursin_dressing_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_dressing_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_dressing_assignment_pre_fk` FOREIGN KEY (`dressing_id`) REFERENCES `ophnuintraoperativenursin_dressing` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->createTable('ophnuintraoperativenursin_additional', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
-				'name' => 'varchar(32) collate utf8_bin not null',
+				'name' => 'varchar(32) NOT NULL',
 				'display_order' => 'int(10) unsigned not null',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
@@ -102,7 +102,7 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 				'KEY `ophnuintraoperativenursin_additional_cui_fk` (`created_user_id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_additional_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_additional_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->insert('ophnuintraoperativenursin_additional',array('id'=>1,'name'=>'Vision blue','display_order'=>1));
 		$this->insert('ophnuintraoperativenursin_additional',array('id'=>2,'name'=>'ICG','display_order'=>2));
@@ -129,11 +129,11 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 				'CONSTRAINT `ophnuintraoperativenursin_additional_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_additional_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_additional_assignment_pre_fk` FOREIGN KEY (`additional_id`) REFERENCES `ophnuintraoperativenursin_additional` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->createTable('ophnuintraoperativenursin_implant', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
-				'name' => 'varchar(32) collate utf8_bin not null',
+				'name' => 'varchar(32) NOT NULL',
 				'display_order' => 'int(10) unsigned not null',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
@@ -144,7 +144,7 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 				'KEY `ophnuintraoperativenursin_implant_cui_fk` (`created_user_id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_implant_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_implant_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->insert('ophnuintraoperativenursin_implant',array('id'=>1,'name'=>'Intraocular lens','display_order'=>1));
 		$this->insert('ophnuintraoperativenursin_implant',array('id'=>2,'name'=>'Ocular sphere ball','display_order'=>2));
@@ -170,12 +170,12 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 				'CONSTRAINT `ophnuintraoperativenursin_implant_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_implant_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_implant_assignment_pre_fk` FOREIGN KEY (`implant_id`) REFERENCES `ophnuintraoperativenursin_implant` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
-		$this->addColumn('et_ophnuintraoperativenursin_details','prep_comments','text collate utf8_bin not null');
-		$this->addColumn('et_ophnuintraoperativenursin_details','dressing_comments','text collate utf8_bin not null');
-		$this->addColumn('et_ophnuintraoperativenursin_details','additional_comments','text collate utf8_bin not null');
-		$this->addColumn('et_ophnuintraoperativenursin_details','implant_comments','text collate utf8_bin not null');
+		$this->addColumn('et_ophnuintraoperativenursin_details','prep_comments','text NOT NULL');
+		$this->addColumn('et_ophnuintraoperativenursin_details','dressing_comments','text NOT NULL');
+		$this->addColumn('et_ophnuintraoperativenursin_details','additional_comments','text NOT NULL');
+		$this->addColumn('et_ophnuintraoperativenursin_details','implant_comments','text NOT NULL');
 	}
 
 	public function down()
@@ -198,6 +198,6 @@ class m131016_104250_changes_for_orbis extends CDbMigration
 
 		$this->alterColumn('et_ophnuintraoperativenursin_details','viscoelastic_used_id','int(10) unsigned not null');
 
-		$this->addColumn('et_ophnuintraoperativenursin_items','eye_protected','varchar(64) collate utf8_bin not null');
+		$this->addColumn('et_ophnuintraoperativenursin_items','eye_protected','varchar(64) NOT NULL');
 	}
 }
