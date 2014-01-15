@@ -21,7 +21,7 @@ class m131016_135404_viscoelastic_should_be_multiselect extends CDbMigration
 				'CONSTRAINT `ophnuintraoperativenursin_viscoelastic_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_viscoelastic_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_viscoelastic_assignment_pre_fk` FOREIGN KEY (`viscoelastic_id`) REFERENCES `ophnuintraoperativenursin_details_viscoelastic_used` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		foreach ($this->dbConnection->createCommand()->select("*")->from("et_ophnuintraoperativenursin_details")->queryAll() as $row) {
 			if ($row['viscoelastic_used_id']) {

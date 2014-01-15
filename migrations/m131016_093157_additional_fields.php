@@ -13,7 +13,7 @@ class m131016_093157_additional_fields extends CDbMigration
 
 		$this->createTable('ophnuintraoperativenursin_grounding_pad_location', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
-				'name' => 'varchar(32) collate utf8_bin not null',
+				'name' => 'varchar(32) NOT NULL',
 				'display_order' => 'int(10) unsigned not null',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
@@ -24,7 +24,7 @@ class m131016_093157_additional_fields extends CDbMigration
 				'KEY `ophnuintraoperativenursin_grounding_pad_location_cui_fk` (`created_user_id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_grounding_pad_location_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_grounding_pad_location_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->insert('ophnuintraoperativenursin_grounding_pad_location',array('id'=>1,'name'=>'Buttocks','display_order'=>1));
 		$this->insert('ophnuintraoperativenursin_grounding_pad_location',array('id'=>2,'name'=>'Thigh','display_order'=>2));
@@ -52,7 +52,7 @@ class m131016_093157_additional_fields extends CDbMigration
 
 		$this->dropTable('ophnuintraoperativenursin_grounding_pad_location');
 
-		$this->alterColumn('et_ophnuintraoperativenursin_details','grounding_pad','text COLLATE utf8_bin');
+		$this->alterColumn('et_ophnuintraoperativenursin_details','grounding_pad','text');
 
 		$this->delete('ophnuintraoperativenursin_details_viscoelastic_used',"id in (4,5)");
 	}

@@ -65,12 +65,12 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 				'CONSTRAINT `et_ophnuintraoperativenursin_items_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `et_ophnuintraoperativenursin_items_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `et_ophnuintraoperativenursin_items_ev_fk` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		// element lookup table ophnuintraoperativenursin_details_viscoelastic_used
 		$this->createTable('ophnuintraoperativenursin_details_viscoelastic_used', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
-				'name' => 'varchar(128) COLLATE utf8_bin NOT NULL',
+				'name' => 'varchar(128) NOT NULL',
 				'display_order' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
@@ -81,7 +81,7 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 				'KEY `ophnuintraoperativenursin_details_viscoelastic_used_cui_fk` (`created_user_id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_details_viscoelastic_used_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_details_viscoelastic_used_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->insert('ophnuintraoperativenursin_details_viscoelastic_used',array('name'=>'Healon','display_order'=>1));
 		$this->insert('ophnuintraoperativenursin_details_viscoelastic_used',array('name'=>'Healon GV','display_order'=>2));
@@ -90,7 +90,7 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 		// element lookup table ophnuintraoperativenursin_details_nonop_eye_protected
 		$this->createTable('ophnuintraoperativenursin_details_nonop_eye_protected', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
-				'name' => 'varchar(128) COLLATE utf8_bin NOT NULL',
+				'name' => 'varchar(128) NOT NULL',
 				'display_order' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
@@ -101,7 +101,7 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 				'KEY `ophnuintraoperativenursin_details_nonop_eye_protected_cui_fk` (`created_user_id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_details_nonop_eye_protected_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_details_nonop_eye_protected_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->insert('ophnuintraoperativenursin_details_nonop_eye_protected',array('name'=>'Tape','display_order'=>1));
 		$this->insert('ophnuintraoperativenursin_details_nonop_eye_protected',array('name'=>'Shield','display_order'=>2));
@@ -110,7 +110,7 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 		// element lookup table ophnuintraoperativenursin_details_nasal_or_throat_pack
 		$this->createTable('ophnuintraoperativenursin_details_nasal_or_throat_pack', array(
 				'id' => 'int(10) unsigned NOT NULL AUTO_INCREMENT',
-				'name' => 'varchar(128) COLLATE utf8_bin NOT NULL',
+				'name' => 'varchar(128) NOT NULL',
 				'display_order' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
@@ -121,7 +121,7 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 				'KEY `ophnuintraoperativenursin_details_nasal_or_throat_pack_cui_fk` (`created_user_id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_details_nasal_or_throat_pack_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_details_nasal_or_throat_pack_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 		$this->insert('ophnuintraoperativenursin_details_nasal_or_throat_pack',array('name'=>'Nasal','display_order'=>1));
 		$this->insert('ophnuintraoperativenursin_details_nasal_or_throat_pack',array('name'=>'Throat','display_order'=>2));
@@ -134,10 +134,10 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 				'event_id' => 'int(10) unsigned NOT NULL',
 				'viscoelastic_used_id' => 'int(10) unsigned NOT NULL', // Viscoelastic used
 				'nonop_eye_protected_id' => 'int(10) unsigned NOT NULL', // Nonop eye protected
-				'grounding_pad' => 'text COLLATE utf8_bin DEFAULT \'\'', // Grounding pad
+				'grounding_pad' => 'text DEFAULT \'\'', // Grounding pad
 				'nasal_or_throat_pack_id' => 'int(10) unsigned NOT NULL', // Nasal or throat pack
-				'inserted_time' => 'varchar(255) COLLATE utf8_bin DEFAULT \'\'', // Inserted time
-				'removal_time' => 'varchar(255) COLLATE utf8_bin DEFAULT \'\'', // Removal time
+				'inserted_time' => 'varchar(255) DEFAULT \'\'', // Inserted time
+				'removal_time' => 'varchar(255) DEFAULT \'\'', // Removal time
 				'last_modified_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
 				'last_modified_date' => 'datetime NOT NULL DEFAULT \'1901-01-01 00:00:00\'',
 				'created_user_id' => 'int(10) unsigned NOT NULL DEFAULT 1',
@@ -155,7 +155,7 @@ class m130923_141207_event_type_OphNuIntraoperativenursing extends CDbMigration
 				'CONSTRAINT `ophnuintraoperativenursin_details_viscoelastic_used_fk` FOREIGN KEY (`viscoelastic_used_id`) REFERENCES `ophnuintraoperativenursin_details_viscoelastic_used` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_details_nonop_eye_protected_fk` FOREIGN KEY (`nonop_eye_protected_id`) REFERENCES `ophnuintraoperativenursin_details_nonop_eye_protected` (`id`)',
 				'CONSTRAINT `ophnuintraoperativenursin_details_nasal_or_throat_pack_fk` FOREIGN KEY (`nasal_or_throat_pack_id`) REFERENCES `ophnuintraoperativenursin_details_nasal_or_throat_pack` (`id`)',
-			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin');
+			), 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
 	}
 
