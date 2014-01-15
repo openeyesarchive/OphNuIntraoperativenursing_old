@@ -11,8 +11,8 @@ CREATE TABLE `et_ophnuintraoperativenursin_details_version` (
 	`nonop_eye_protected_id` int(10) unsigned NOT NULL,
 	`grounding_pad` tinyint(1) unsigned NOT NULL,
 	`nasal_or_throat_pack_id` int(10) unsigned NOT NULL,
-	`inserted_time` varchar(255) COLLATE utf8_bin DEFAULT '',
-	`removal_time` varchar(255) COLLATE utf8_bin DEFAULT '',
+	`inserted_time` varchar(255) DEFAULT '',
+	`removal_time` varchar(255) DEFAULT '',
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
 	`created_user_id` int(10) unsigned NOT NULL DEFAULT '1',
@@ -22,10 +22,10 @@ CREATE TABLE `et_ophnuintraoperativenursin_details_version` (
 	`xray_required` tinyint(1) unsigned NOT NULL,
 	`specimins_collected` tinyint(1) unsigned NOT NULL,
 	`path_form_completed` tinyint(1) unsigned NOT NULL,
-	`prep_comments` text COLLATE utf8_bin NOT NULL,
-	`dressing_comments` text COLLATE utf8_bin NOT NULL,
-	`additional_comments` text COLLATE utf8_bin NOT NULL,
-	`implant_comments` text COLLATE utf8_bin NOT NULL,
+	`prep_comments` text NOT NULL,
+	`dressing_comments` text NOT NULL,
+	`additional_comments` text NOT NULL,
+	`implant_comments` text NOT NULL,
 	PRIMARY KEY (`id`),
 	KEY `acv_et_ophnuintraoperativenursin_details_lmui_fk` (`last_modified_user_id`),
 	KEY `acv_et_ophnuintraoperativenursin_details_cui_fk` (`created_user_id`),
@@ -39,7 +39,7 @@ CREATE TABLE `et_ophnuintraoperativenursin_details_version` (
 	CONSTRAINT `acv_et_ophnuintraoperativenursin_details_location_id_fk` FOREIGN KEY (`location_id`) REFERENCES `ophnuintraoperativenursin_grounding_pad_location` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_details_nasal_or_throat_pack_fk` FOREIGN KEY (`nasal_or_throat_pack_id`) REFERENCES `ophnuintraoperativenursin_details_nasal_or_throat_pack` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_details_nonop_eye_protected_fk` FOREIGN KEY (`nonop_eye_protected_id`) REFERENCES `ophnuintraoperativenursin_details_nonop_eye_protected` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('et_ophnuintraoperativenursin_details_version','id','int(10) unsigned NOT NULL');
@@ -58,24 +58,24 @@ CREATE TABLE `et_ophnuintraoperativenursin_details_version` (
 CREATE TABLE `et_ophnuintraoperativenursin_items_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 	`event_id` int(10) unsigned NOT NULL,
-	`needles1` varchar(16) COLLATE utf8_bin NOT NULL,
-	`needles2` varchar(16) COLLATE utf8_bin NOT NULL,
-	`needles3` varchar(16) COLLATE utf8_bin NOT NULL,
-	`blades1` varchar(16) COLLATE utf8_bin NOT NULL,
-	`blades2` varchar(16) COLLATE utf8_bin NOT NULL,
-	`blades3` varchar(16) COLLATE utf8_bin NOT NULL,
-	`plugs1` varchar(16) COLLATE utf8_bin NOT NULL,
-	`plugs2` varchar(16) COLLATE utf8_bin NOT NULL,
-	`plugs3` varchar(16) COLLATE utf8_bin NOT NULL,
-	`trocars1` varchar(16) COLLATE utf8_bin NOT NULL,
-	`trocars2` varchar(16) COLLATE utf8_bin NOT NULL,
-	`trocars3` varchar(16) COLLATE utf8_bin NOT NULL,
-	`sponges_gauze1` varchar(16) COLLATE utf8_bin NOT NULL,
-	`sponges_gauze2` varchar(16) COLLATE utf8_bin NOT NULL,
-	`sponges_gauze3` varchar(16) COLLATE utf8_bin NOT NULL,
-	`pledgetts1` varchar(16) COLLATE utf8_bin NOT NULL,
-	`pledgetts2` varchar(16) COLLATE utf8_bin NOT NULL,
-	`pledgetts3` varchar(16) COLLATE utf8_bin NOT NULL,
+	`needles1` varchar(16) NOT NULL,
+	`needles2` varchar(16) NOT NULL,
+	`needles3` varchar(16) NOT NULL,
+	`blades1` varchar(16) NOT NULL,
+	`blades2` varchar(16) NOT NULL,
+	`blades3` varchar(16) NOT NULL,
+	`plugs1` varchar(16) NOT NULL,
+	`plugs2` varchar(16) NOT NULL,
+	`plugs3` varchar(16) NOT NULL,
+	`trocars1` varchar(16) NOT NULL,
+	`trocars2` varchar(16) NOT NULL,
+	`trocars3` varchar(16) NOT NULL,
+	`sponges_gauze1` varchar(16) NOT NULL,
+	`sponges_gauze2` varchar(16) NOT NULL,
+	`sponges_gauze3` varchar(16) NOT NULL,
+	`pledgetts1` varchar(16) NOT NULL,
+	`pledgetts2` varchar(16) NOT NULL,
+	`pledgetts3` varchar(16) NOT NULL,
 	`discrepancies` tinyint(1) unsigned NOT NULL DEFAULT '0',
 	`xray_required` tinyint(1) unsigned NOT NULL DEFAULT '0',
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
@@ -91,7 +91,7 @@ CREATE TABLE `et_ophnuintraoperativenursin_items_version` (
 	`scrub_nurse_id` int(10) unsigned NOT NULL,
 	`circulating_nurse_id` int(10) unsigned NOT NULL,
 	`anaesthetic_nurse_id` int(10) unsigned NOT NULL,
-	`wound_classification` text COLLATE utf8_bin NOT NULL,
+	`wound_classification` text NOT NULL,
 	PRIMARY KEY (`id`),
 	KEY `acv_et_ophnuintraoperativenursin_items_lmui_fk` (`last_modified_user_id`),
 	KEY `acv_et_ophnuintraoperativenursin_items_cui_fk` (`created_user_id`),
@@ -105,7 +105,7 @@ CREATE TABLE `et_ophnuintraoperativenursin_items_version` (
 	CONSTRAINT `acv_et_ophnuintraoperativenursin_items_ev_fk` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`),
 	CONSTRAINT `acv_et_ophnuintraoperativenursin_items_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_et_ophnuintraoperativenursin_items_scrub_nurse_id_fk` FOREIGN KEY (`scrub_nurse_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('et_ophnuintraoperativenursin_items_version','id','int(10) unsigned NOT NULL');
@@ -123,7 +123,7 @@ CREATE TABLE `et_ophnuintraoperativenursin_items_version` (
 		$this->execute("
 CREATE TABLE `ophnuintraoperativenursin_additional_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`name` varchar(32) COLLATE utf8_bin NOT NULL,
+	`name` varchar(32) NOT NULL,
 	`display_order` int(10) unsigned NOT NULL,
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
@@ -134,7 +134,7 @@ CREATE TABLE `ophnuintraoperativenursin_additional_version` (
 	KEY `acv_ophnuintraoperativenursin_additional_cui_fk` (`created_user_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_additional_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_additional_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_additional_version','id','int(10) unsigned NOT NULL');
@@ -167,7 +167,7 @@ CREATE TABLE `ophnuintraoperativenursin_additional_assignment_version` (
 	CONSTRAINT `acv_ophnuintraoperativenursin_additional_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_additional_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_additional_assignment_pre_fk` FOREIGN KEY (`additional_id`) REFERENCES `ophnuintraoperativenursin_additional` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_additional_assignment_version','id','int(10) unsigned NOT NULL');
@@ -185,7 +185,7 @@ CREATE TABLE `ophnuintraoperativenursin_additional_assignment_version` (
 		$this->execute("
 CREATE TABLE `ophnuintraoperativenursin_details_nasal_or_throat_pack_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`name` varchar(128) COLLATE utf8_bin NOT NULL,
+	`name` varchar(128) NOT NULL,
 	`display_order` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
@@ -196,7 +196,7 @@ CREATE TABLE `ophnuintraoperativenursin_details_nasal_or_throat_pack_version` (
 	KEY `acv_uintraoperativenursin_details_nasal_or_throat_pack_cui_fk` (`created_user_id`),
 	CONSTRAINT `acv_uintraoperativenursin_details_nasal_or_throat_pack_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_uintraoperativenursin_details_nasal_or_throat_pack_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_details_nasal_or_throat_pack_version','id','int(10) unsigned NOT NULL');
@@ -214,7 +214,7 @@ CREATE TABLE `ophnuintraoperativenursin_details_nasal_or_throat_pack_version` (
 		$this->execute("
 CREATE TABLE `ophnuintraoperativenursin_details_nonop_eye_protected_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`name` varchar(128) COLLATE utf8_bin NOT NULL,
+	`name` varchar(128) NOT NULL,
 	`display_order` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
@@ -225,7 +225,7 @@ CREATE TABLE `ophnuintraoperativenursin_details_nonop_eye_protected_version` (
 	KEY `acv_ophnuintraoperativenursin_details_nonop_eye_protected_cui_fk` (`created_user_id`),
 	CONSTRAINT `acv_uintraoperativenursin_details_nonop_eye_protected_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_details_nonop_eye_protected_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_details_nonop_eye_protected_version','id','int(10) unsigned NOT NULL');
@@ -243,7 +243,7 @@ CREATE TABLE `ophnuintraoperativenursin_details_nonop_eye_protected_version` (
 		$this->execute("
 CREATE TABLE `ophnuintraoperativenursin_details_viscoelastic_used_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`name` varchar(128) COLLATE utf8_bin NOT NULL,
+	`name` varchar(128) NOT NULL,
 	`display_order` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
@@ -254,7 +254,7 @@ CREATE TABLE `ophnuintraoperativenursin_details_viscoelastic_used_version` (
 	KEY `acv_ophnuintraoperativenursin_details_viscoelastic_used_cui_fk` (`created_user_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_details_viscoelastic_used_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_details_viscoelastic_used_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_details_viscoelastic_used_version','id','int(10) unsigned NOT NULL');
@@ -272,7 +272,7 @@ CREATE TABLE `ophnuintraoperativenursin_details_viscoelastic_used_version` (
 		$this->execute("
 CREATE TABLE `ophnuintraoperativenursin_dressing_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`name` varchar(32) COLLATE utf8_bin NOT NULL,
+	`name` varchar(32) NOT NULL,
 	`display_order` int(10) unsigned NOT NULL,
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
@@ -283,7 +283,7 @@ CREATE TABLE `ophnuintraoperativenursin_dressing_version` (
 	KEY `acv_ophnuintraoperativenursin_dressing_cui_fk` (`created_user_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_dressing_version','id','int(10) unsigned NOT NULL');
@@ -316,7 +316,7 @@ CREATE TABLE `ophnuintraoperativenursin_dressing_assignment_version` (
 	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_assignment_pre_fk` FOREIGN KEY (`dressing_id`) REFERENCES `ophnuintraoperativenursin_dressing` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_dressing_assignment_version','id','int(10) unsigned NOT NULL');
@@ -334,7 +334,7 @@ CREATE TABLE `ophnuintraoperativenursin_dressing_assignment_version` (
 		$this->execute("
 CREATE TABLE `ophnuintraoperativenursin_grounding_pad_location_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`name` varchar(32) COLLATE utf8_bin NOT NULL,
+	`name` varchar(32) NOT NULL,
 	`display_order` int(10) unsigned NOT NULL,
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
@@ -345,7 +345,7 @@ CREATE TABLE `ophnuintraoperativenursin_grounding_pad_location_version` (
 	KEY `acv_ophnuintraoperativenursin_grounding_pad_location_cui_fk` (`created_user_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_grounding_pad_location_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_grounding_pad_location_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_grounding_pad_location_version','id','int(10) unsigned NOT NULL');
@@ -363,7 +363,7 @@ CREATE TABLE `ophnuintraoperativenursin_grounding_pad_location_version` (
 		$this->execute("
 CREATE TABLE `ophnuintraoperativenursin_implant_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`name` varchar(32) COLLATE utf8_bin NOT NULL,
+	`name` varchar(32) NOT NULL,
 	`display_order` int(10) unsigned NOT NULL,
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
@@ -374,7 +374,7 @@ CREATE TABLE `ophnuintraoperativenursin_implant_version` (
 	KEY `acv_ophnuintraoperativenursin_implant_cui_fk` (`created_user_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_implant_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_implant_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_implant_version','id','int(10) unsigned NOT NULL');
@@ -407,7 +407,7 @@ CREATE TABLE `ophnuintraoperativenursin_implant_assignment_version` (
 	CONSTRAINT `acv_ophnuintraoperativenursin_implant_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_implant_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_implant_assignment_pre_fk` FOREIGN KEY (`implant_id`) REFERENCES `ophnuintraoperativenursin_implant` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_implant_assignment_version','id','int(10) unsigned NOT NULL');
@@ -425,7 +425,7 @@ CREATE TABLE `ophnuintraoperativenursin_implant_assignment_version` (
 		$this->execute("
 CREATE TABLE `ophnuintraoperativenursin_prep_version` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	`name` varchar(32) COLLATE utf8_bin NOT NULL,
+	`name` varchar(32) NOT NULL,
 	`display_order` int(10) unsigned NOT NULL,
 	`last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
 	`last_modified_date` datetime NOT NULL DEFAULT '1901-01-01 00:00:00',
@@ -436,7 +436,7 @@ CREATE TABLE `ophnuintraoperativenursin_prep_version` (
 	KEY `acv_ophnuintraoperativenursin_prep_cui_fk` (`created_user_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_prep_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_prep_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_prep_version','id','int(10) unsigned NOT NULL');
@@ -469,7 +469,7 @@ CREATE TABLE `ophnuintraoperativenursin_prep_assignment_version` (
 	CONSTRAINT `acv_ophnuintraoperativenursin_prep_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_prep_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_prep_assignment_pre_fk` FOREIGN KEY (`prep_id`) REFERENCES `ophnuintraoperativenursin_prep` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_prep_assignment_version','id','int(10) unsigned NOT NULL');
@@ -502,7 +502,7 @@ CREATE TABLE `ophnuintraoperativenursin_viscoelastic_assignment_version` (
 	CONSTRAINT `acv_ophnuintraoperativenursin_viscoelastic_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_viscoelastic_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_viscoelastic_assignment_pre_fk` FOREIGN KEY (`viscoelastic_id`) REFERENCES `ophnuintraoperativenursin_details_viscoelastic_used` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
 
 		$this->alterColumn('ophnuintraoperativenursin_viscoelastic_assignment_version','id','int(10) unsigned NOT NULL');
