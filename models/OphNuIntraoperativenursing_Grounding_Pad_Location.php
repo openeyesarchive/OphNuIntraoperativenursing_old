@@ -32,7 +32,7 @@
  * @property User $usermodified
  */
 
-class OphNuIntraoperativenursing_Grounding_Pad_Location extends BaseActiveRecordVersioned
+class OphNuIntraoperativenursing_Grounding_Pad_Location extends BaseActiveRecordVersionedSoftDelete
 {
 	/**
 	 * Returns the static model of the specified AR class.

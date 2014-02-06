@@ -32,7 +32,7 @@
  * @property User $usermodified
  */
 
-class OphNuIntraoperativenursing_Details_NonopEyeProtected extends BaseActiveRecordVersioned
+class OphNuIntraoperativenursing_Details_NonopEyeProtected extends BaseActiveRecordVersionedSoftDelete
 {
 	/**
 	 * Returns the static model of the specified AR class.
