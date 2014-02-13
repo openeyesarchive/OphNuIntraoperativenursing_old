@@ -80,7 +80,7 @@
 	<?php echo $form->textField($element, 'sign_out', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'sign_out_now')))?>
 	<?php echo $form->textField($element, 'surgery_stop', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'surgery_stop_now')))?>
 	<?php echo $form->textField($element, 'left_or', array('size'=>6),array('links'=>array('title'=>'now','href'=>'#','id'=>'left_or_now')))?>
-	<?php echo $form->dropDownList($element, 'scrub_nurse_id', CHtml::listData(User::model()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
-	<?php echo $form->dropDownList($element, 'circulating_nurse_id', CHtml::listData(User::model()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
-	<?php echo $form->dropDownList($element, 'anaesthetic_nurse_id', CHtml::listData(User::model()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
+	<?php echo $form->dropDownList($element, 'scrub_nurse_id', CHtml::listData(User::model()->active()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
+	<?php echo $form->dropDownList($element, 'circulating_nurse_id', CHtml::listData(User::model()->active()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
+	<?php echo $form->dropDownList($element, 'anaesthetic_nurse_id', CHtml::listData(User::model()->active()->findAll(array('order'=>'first_name,last_name')),'id','fullName'), array('empty'=>'- Select -'))?>
 </div>
