@@ -209,5 +209,75 @@ class Element_OphNuIntraoperativenursing_Details extends BaseEventTypeElement
 		$criteria->addNotInCondition($field,$_POST[$name]);
 		$model::model()->deleteAll($criteria);
 	}
+
+	/**
+	 * Get ids of additional items associated with the element
+	 */
+	public function getAdditionalItemValues()
+	{
+		$additional_item_values = array();
+
+		foreach ($this->additionalItems as $additional_item) {
+			$additional_item_values[] = $additional_item->additional_id;
+		}
+
+		return $additional_item_values;
+	}
+
+	/**
+	 * Get ids of visco elastic items associated with the element
+	 */
+	public function getViscoElasticValues()
+	{
+		$viscoelastic_values = array();
+
+		foreach ($this->viscoelasticItems as $viscoelastic_item) {
+			$viscoelastic_values[] = $viscoelastic_item->viscoelastic_id;
+		}
+
+		return $viscoelastic_values;
+	}
+
+	/**
+	 * Get ids of dressing items associated with the element
+	 */
+	public function getDressingItemValues()
+	{
+		$dressing_item_values = array();
+
+		foreach ($this->dressingItems as $dressing_item) {
+			$dressing_item_values[] = $dressing_item->dressing_id;
+		}
+
+		return $dressing_item_values;
+	}
+
+	/**
+	 * Get ids of implant items associated with the element
+	 */
+	public function getImplantItemValues()
+	{
+		$implant_item_values = array();
+
+		foreach ($this->implantItems as $implant_item) {
+			$implant_item_values[] = $implant_item->implant_id;
+		}
+
+		return $implant_item_values;
+	}
+
+	/**
+	 * Get ids of prep items associated with the element
+	 */
+	public function getPrepItemValues()
+	{
+		$prep_item_values = array();
+
+		foreach ($this->prepItems as $prep_item) {
+			$prep_item_values[] = $prep_item->prep_id;
+		}
+
+		return $prep_item_values;
+	}
 }
 ?>

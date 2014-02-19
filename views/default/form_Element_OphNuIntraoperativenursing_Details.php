@@ -25,19 +25,19 @@
 	data-element-display-order="<?php echo $element->elementType->display_order?>">
 	<h4 class="elementTypeName"><?php echo $element->elementType->name; ?></h4>
 
-	<?php echo $form->multiSelectList($element, 'Viscoelastic', 'viscoelasticItems', 'viscoelastic_id', CHtml::listData(OphNuIntraoperativenursing_Details_ViscoelasticUsed::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label' => 'Viscoelastic used','empty' => '- Select -'))?>
-	<?php echo $form->radioButtons($element, 'nonop_eye_protected_id', 'ophnuintraoperativenursin_details_nonop_eye_protected')?>
+	<?php echo $form->multiSelectList($element, 'Viscoelastic', 'viscoelasticItems', 'viscoelastic_id', CHtml::listData(OphNuIntraoperativenursing_Details_ViscoelasticUsed::model()->notDeletedOrPk($element->viscoElasticValues)->findAll(array('order'=>'display_order')),'id','name'), array(), array('label' => 'Viscoelastic used','empty' => '- Select -'))?>
+	<?php echo $form->radioButtons($element, 'nonop_eye_protected_id', CHtml::listData(OphNuIntraoperativenursing_Details_NonopEyeProtected::model()->notDeletedOrPk($element->nonop_eye_protected_id)->findAll(array('order'=>'display_order')),'id','name'))?>
 	<?php echo $form->radioBoolean($element, 'grounding_pad')?>
-	<?php echo $form->radioButtons($element, 'location_id', 'ophnuintraoperativenursin_grounding_pad_location', null, false, $this->locationHidden($element))?>
-	<?php echo $form->radioButtons($element, 'nasal_or_throat_pack_id', 'ophnuintraoperativenursin_details_nasal_or_throat_pack')?>
+	<?php echo $form->radioButtons($element, 'location_id', CHtml::listData(OphNuIntraoperativenursing_Grounding_Pad_Location::model()->notDeletedOrPk($element->location_id)->findAll(array('order'=>'display_order')),'id','name'), null, false, $this->locationHidden($element))?>
+	<?php echo $form->radioButtons($element, 'nasal_or_throat_pack_id', CHtml::listData(OphNuIntraoperativenursing_Details_NasalOrThroatPack::model()->notDeletedOrPk($element->nasal_or_throat_pack_id)->findAll(array('order'=>'display_order')),'id','name'))?>
 	<?php echo $form->textField($element, 'inserted_time', array('size' => '6', 'hide' => $this->timeFieldsHidden($element)),array('links'=>array('title'=>'now','href'=>'#','id'=>'inserted_now')))?>
 	<?php echo $form->textField($element, 'removal_time', array('size' => '6', 'hide' => $this->timeFieldsHidden($element)),array('links'=>array('title'=>'now','href'=>'#','id'=>'removal_now')))?>
 	<?php echo $form->radioBoolean($element, 'count_discrepancy')?>
 	<?php echo $form->radioBoolean($element, 'xray_required')?>
 	<?php echo $form->radioBoolean($element, 'specimins_collected')?>
 	<?php echo $form->radioBoolean($element, 'path_form_completed')?>
-	<?php echo $form->multiSelectList($element, 'Prep', 'prepItems', 'prep_id', CHtml::listData(OphNuIntraoperativenursing_Prep::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Prep','empty'=>'- Select -','textField'=>'prep_comments','width'=>'13.5em'))?>
-	<?php echo $form->multiSelectList($element, 'Dressing', 'dressingItems', 'dressing_id', CHtml::listData(OphNuIntraoperativenursing_Dressing::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Dressing','empty'=>'- Select -','textField'=>'dressing_comments','width'=>'13.5em'))?>
-	<?php echo $form->multiSelectList($element, 'Additional', 'additionalItems', 'additional_id', CHtml::listData(OphNuIntraoperativenursing_Additional::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Additional','empty'=>'- Select -','textField'=>'additional_comments','width'=>'13.5em'))?>
-	<?php echo $form->multiSelectList($element, 'Implant', 'implantItems', 'implant_id', CHtml::listData(OphNuIntraoperativenursing_Implant::model()->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Implant/prosthesis/scleral buckle','empty'=>'- Select -','textField'=>'implant_comments','width'=>'13.5em'))?>
+	<?php echo $form->multiSelectList($element, 'Prep', 'prepItems', 'prep_id', CHtml::listData(OphNuIntraoperativenursing_Prep::model()->notDeletedOrPk($element->prepItemValues)->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Prep','empty'=>'- Select -','textField'=>'prep_comments','width'=>'13.5em'))?>
+	<?php echo $form->multiSelectList($element, 'Dressing', 'dressingItems', 'dressing_id', CHtml::listData(OphNuIntraoperativenursing_Dressing::model()->notDeletedOrPk($element->dressingItemValues)->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Dressing','empty'=>'- Select -','textField'=>'dressing_comments','width'=>'13.5em'))?>
+	<?php echo $form->multiSelectList($element, 'Additional', 'additionalItems', 'additional_id', CHtml::listData(OphNuIntraoperativenursing_Additional::model()->notDeletedOrPk($element->additionalItemValues)->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Additional','empty'=>'- Select -','textField'=>'additional_comments','width'=>'13.5em'))?>
+	<?php echo $form->multiSelectList($element, 'Implant', 'implantItems', 'implant_id', CHtml::listData(OphNuIntraoperativenursing_Implant::model()->notDeletedOrPk($element->implantItemValues)->findAll(array('order'=>'display_order')),'id','name'), array(), array('label'=>'Implant/prosthesis/scleral buckle','empty'=>'- Select -','textField'=>'implant_comments','width'=>'13.5em'))?>
 </div>
