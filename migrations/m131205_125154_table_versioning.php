@@ -165,7 +165,6 @@ CREATE TABLE `ophnuintraoperativenursin_additional_assignment_version` (
 	KEY `acv_ophnuintraoperativenursin_additional_assignment_pre_fk` (`additional_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_additional_assignment_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_additional_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
-	CONSTRAINT `acv_ophnuintraoperativenursin_additional_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_additional_assignment_pre_fk` FOREIGN KEY (`additional_id`) REFERENCES `ophnuintraoperativenursin_additional` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
@@ -314,7 +313,6 @@ CREATE TABLE `ophnuintraoperativenursin_dressing_assignment_version` (
 	KEY `acv_ophnuintraoperativenursin_dressing_assignment_pre_fk` (`dressing_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_assignment_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
-	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_dressing_assignment_pre_fk` FOREIGN KEY (`dressing_id`) REFERENCES `ophnuintraoperativenursin_dressing` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
@@ -405,7 +403,6 @@ CREATE TABLE `ophnuintraoperativenursin_implant_assignment_version` (
 	KEY `acv_ophnuintraoperativenursin_implant_assignment_pre_fk` (`implant_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_implant_assignment_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_implant_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
-	CONSTRAINT `acv_ophnuintraoperativenursin_implant_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_implant_assignment_pre_fk` FOREIGN KEY (`implant_id`) REFERENCES `ophnuintraoperativenursin_implant` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
@@ -467,7 +464,6 @@ CREATE TABLE `ophnuintraoperativenursin_prep_assignment_version` (
 	KEY `acv_ophnuintraoperativenursin_prep_assignment_pre_fk` (`prep_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_prep_assignment_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_prep_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
-	CONSTRAINT `acv_ophnuintraoperativenursin_prep_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_prep_assignment_pre_fk` FOREIGN KEY (`prep_id`) REFERENCES `ophnuintraoperativenursin_prep` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
@@ -500,7 +496,6 @@ CREATE TABLE `ophnuintraoperativenursin_viscoelastic_assignment_version` (
 	KEY `acv_ophnuintraoperativenursin_viscoelastic_assignment_pre_fk` (`viscoelastic_id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_viscoelastic_assignment_lmui_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_viscoelastic_assignment_cui_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
-	CONSTRAINT `acv_ophnuintraoperativenursin_viscoelastic_assignment_eid_fk` FOREIGN KEY (`element_id`) REFERENCES `et_ophnuintraoperativenursin_details` (`id`),
 	CONSTRAINT `acv_ophnuintraoperativenursin_viscoelastic_assignment_pre_fk` FOREIGN KEY (`viscoelastic_id`) REFERENCES `ophnuintraoperativenursin_details_viscoelastic_used` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 		");
